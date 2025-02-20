@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8303jpg0lwvv"]
+
+[ext_resource type="Script" path="res://static_body_2d.gd" id="1_8ltyi"]
+[ext_resource type="Texture2D" uid="uid://fd7r1lmct8pw" path="res://Puzzle Plorb/Sprites/Box.png" id="2_xyp0o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsslu"]
+size = Vector2(12, 12)
+
+[node name="Box" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_8ltyi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xyp0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jsslu")

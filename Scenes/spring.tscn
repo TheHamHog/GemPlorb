@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://btn7fhxp4bedi"]
+
+[ext_resource type="Script" path="res://Scenes/spring.gd" id="1_aiqqx"]
+[ext_resource type="Texture2D" uid="uid://bb6lfmulup1lw" path="res://Puzzle Plorb/Sprites/Spring.png" id="1_cmoc0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e7et"]
+size = Vector2(12, 2)
+
+[node name="Spring" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_aiqqx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_cmoc0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_8e7et")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

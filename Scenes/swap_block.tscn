@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbpp88quc31cy"]
+
+[ext_resource type="Script" path="res://swap_block.gd" id="1_g2bfg"]
+[ext_resource type="Texture2D" uid="uid://8ang7hn8uoyc" path="res://Puzzle Plorb/Sprites/PathSwap.png" id="2_ojiy0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gbw2"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvbsu"]
+atlas = ExtResource("2_ojiy0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyuns"]
+atlas = ExtResource("2_ojiy0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bcmqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvbsu")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyuns")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="SwapBlock" type="StaticBody2D"]
+script = ExtResource("1_g2bfg")
+
+[node name="BlockColl" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4gbw2")
+
+[node name="Blocks" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bcmqg")
+animation = &"on"

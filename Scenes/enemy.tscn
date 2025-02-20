@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdkkefdj6mfdq"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_voaux"]
+[ext_resource type="Texture2D" uid="uid://ctf6d1r2sg1ra" path="res://Puzzle Plorb/Sprites/BadBlorb.png" id="2_sv8eo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05a76"]
+atlas = ExtResource("2_sv8eo")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn07j"]
+atlas = ExtResource("2_sv8eo")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5nplk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05a76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn07j")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1nd7"]
+radius = 7.0
+
+[node name="Enemy" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_voaux")
+
+[node name="Sprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5nplk")
+animation = &"walking"
+autoplay = "walking"
+frame_progress = 0.995951
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t1nd7")
+
+[node name="Right" type="RayCast2D" parent="."]
+target_position = Vector2(14, 0)
+collision_mask = 5
+
+[node name="Left" type="RayCast2D" parent="."]
+target_position = Vector2(-14, 0)
+collision_mask = 5

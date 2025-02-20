@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnllxwqce3cq5"]
+
+[ext_resource type="Texture2D" uid="uid://1eovmjk8tayi" path="res://Puzzle Plorb/Sprites/Platforms.png" id="1_6tiuc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnv7v"]
+size = Vector2(32, 4)
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6tiuc")
+region_enabled = true
+region_rect = Rect2(0, 27, 32, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bnv7v")
+one_way_collision = true
