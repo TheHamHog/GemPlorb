@@ -8,4 +8,4 @@ var final_score = 0
 
 
 #SwapBlock
-var on_off : bool
+var on_off = false

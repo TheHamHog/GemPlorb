@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://k11jqx2wi87f"]
+
+[ext_resource type="Texture2D" uid="uid://cotkea3bw0f3j" path="res://Puzzle Plorb/Sprites/Spike.png" id="1_dir2w"]
+[ext_resource type="Script" path="res://Scenes/spike.gd" id="1_lelhh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo3v2"]
+size = Vector2(10, 4)
+
+[node name="Spike" type="Node2D"]
+script = ExtResource("1_lelhh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("1_dir2w")
+region_enabled = true
+region_rect = Rect2(1, 8, 14, 8)
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_yo3v2")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

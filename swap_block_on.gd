@@ -6,9 +6,9 @@ extends StaticBody2D
 func _process(delta: float) -> void:
 
 	if DataHandler.on_off == true:
-		on_block()
-	elif  DataHandler.on_off == false:
 		off_block()
+	elif  DataHandler.on_off == false:
+		on_block()
 
 func on_block():
 	blocks.play("on")
