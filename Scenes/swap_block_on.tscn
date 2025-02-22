@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://e3asyxpqk0xc"]
 
-[ext_resource type="Script" path="res://swap_block_on.gd" id="1_2mmn2"]
+[ext_resource type="Script" path="res://Scripts/swap_block_on.gd" id="1_2mmn2"]
 [ext_resource type="Texture2D" uid="uid://8ang7hn8uoyc" path="res://Puzzle Plorb/Sprites/PathSwap.png" id="2_i81p8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gbw2"]

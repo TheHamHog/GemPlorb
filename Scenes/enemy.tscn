@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdkkefdj6mfdq"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_voaux"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_voaux"]
 [ext_resource type="Texture2D" uid="uid://ctf6d1r2sg1ra" path="res://Puzzle Plorb/Sprites/BadBlorb.png" id="2_sv8eo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_05a76"]
